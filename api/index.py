@@ -11,10 +11,7 @@ website_url = "https://hulkbuster-flask-test.hf.space"
 # To store the last response from the website
 website_data = {}
 
-@app.route('/')
-def home():
-    start_background_task()
-    return 'Hello, World!'
+
 
 # Function to call the website every 10 seconds
 def call_website_periodically():
@@ -38,6 +35,11 @@ def start_background_task():
     thread = threading.Thread(target=call_website_periodically)
     thread.daemon = True  # Daemonize thread to stop with the main program
     thread.start()
+
+@app.route('/')
+def home():
+    start_background_task()
+    return 'Hello, World!'
 
 # API to fetch the latest website data
 @app.route('/get_website_data', methods=['GET'])
