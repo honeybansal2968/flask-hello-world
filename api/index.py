@@ -26,7 +26,7 @@ def call_website_periodically():
             print(f"Error calling {website_url}: {e}")
         
         # Wait for 10 seconds before calling the website again
-        time.sleep(10)
+        time.sleep(600)
 
 # Start the background thread
 def start_background_task():
