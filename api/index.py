@@ -11,6 +11,11 @@ website_url = "https://hulkbuster-flask-test.hf.space"
 # To store the last response from the website
 website_data = {}
 
+@app.route('/')
+def home():
+    start_background_task()
+    return 'Hello, World!'
+
 # Function to call the website every 10 seconds
 def call_website_periodically():
     global website_data
@@ -39,6 +44,6 @@ def start_background_task():
 def get_website_data():
     return jsonify(website_data)
 
-if __name__ == '__main__':
-    start_background_task()
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     start_background_task()
+#     app.run(debug=True)
