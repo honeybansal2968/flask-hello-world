@@ -6,7 +6,7 @@ import requests
 app = Flask(__name__)
 
 # URL to call
-website_url = "https://hulkbuster-flask-test.hf.space/docs"
+website_url = "https://hulkbuster-flask-test.hf.space"
 
 # To store the last response from the website
 website_data = {}
