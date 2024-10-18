@@ -2,12 +2,12 @@ from flask import Flask, jsonify
 import threading
 import time
 import requests
-
+from flask_cors import CORS
 app = Flask(__name__)
 
 # URL to call
 website_url = "https://hulkbuster-flask-test.hf.space"
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 # To store the last response from the website
 website_data = {}
 
